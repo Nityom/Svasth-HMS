@@ -713,6 +713,38 @@ main section[id] { scroll-margin-top:96px; }
   .doctor-review-placeholder { font-size:10px; }
 }
 @media(max-width:400px) { .doctor-review-grid { grid-template-columns:1fr; } }
+/* Keep the product tour usable on narrow and short phone viewports. */
+@media(max-width:480px) {
+  .topbar { padding-left:14px; padding-right:14px; }
+  .brand small { display:none; }
+  .brand b { font-size:16px; }
+  .nav-actions { gap:7px; }
+  .nav-actions .button { min-width:0; width:auto; flex:none; height:34px; padding:0 9px; font-size:8px; white-space:nowrap; gap:5px; }
+  .nav-actions .button svg { flex:none; width:13px; }
+  .living-intro h2 { font-size:clamp(34px,9vw,42px); }
+  .living-sticky-column { position:sticky; top:74px; z-index:3; }
+  .living-device { overflow:hidden; }
+  .living-patient-card,.living-booking-card { width:min(82%,300px); right:0; }
+  .living-flow-chip { max-width:78%; white-space:normal; }
+  .living-story-step { min-height:56vh; padding:36px 4px 50px; }
+  .living-story-step h3 { font-size:clamp(28px,8vw,34px); }
+  .doctor-reviews-section { padding:50px 16px; }
+  .doctor-review-card { padding:16px; }
+  .doctor-review-placeholder { font-size:14px; line-height:1.65; }
+  .doctor-review-person b { font-size:14px; }
+  .doctor-review-person small { font-size:11px; }
+}
+@media(max-width:360px) {
+  .nav-cta-label { font-size:0; }
+  .nav-cta-label::after { content:'Book demo'; font-size:8px; }
+  .nav-actions .button { gap:5px; padding:0 8px; }
+}
+@media(max-width:480px) and (max-height:700px) {
+  .living-section { padding-top:48px; padding-bottom:48px; }
+  .living-intro { margin-bottom:20px; }
+  .living-app-body { min-height:340px; }
+  .living-scene-panel { min-height:275px; }
+}
 .avatar-stack img { width:100%; height:100%; border-radius:50%; object-fit:cover; }
 .hero-proof { width:100%; min-width:0; gap:12px; }
 .hero-proof-copy { flex:1; min-width:0; }

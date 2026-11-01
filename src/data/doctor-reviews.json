@@ -46,11 +46,6 @@
     "role": "Oral Physician & Radiologist",
     "photo": "/doctors/doctor10.jpg",
     "review": "It helps to have appointments, notes, and follow-ups connected, rather than scattered across different tools."
-  },
-  {
-    "name": "Dr. B. K. Rai",
-    "role": "Dental Surgeon",
-    "photo": "/doctors/doctor11.jpg",
-    "review": "A shared view of admissions, ward activity, and billing makes it easier for our teams to stay on the same page."
   }
+
 ]

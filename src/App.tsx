@@ -149,7 +149,7 @@ function App() {
           {label}{activeSection===id&&<motion.span className="nav-active-indicator" layoutId="nav-active-indicator" transition={{type:'spring',stiffness:420,damping:34}}/>}
         </motion.a>)}
       </nav>
-      <div className="nav-actions"><a className="nav-phone" href="tel:+917796308778">+91 77963 08778</a><button className="button button-small" onClick={openDemo}>Book a walkthrough <ArrowRight size={15}/></button><button className="menu-toggle" aria-label="Toggle menu" onClick={() => setMenu(!menu)}>{menu ? <X/> : <Menu/>}</button></div>
+      <div className="nav-actions"><a className="nav-phone" href="tel:+917796308778">+91 77963 08778</a><button className="button button-small" onClick={openDemo}><span className="nav-cta-label">Book a walkthrough</span><ArrowRight size={15}/></button><button className="menu-toggle" aria-label="Toggle menu" onClick={() => setMenu(!menu)}>{menu ? <X/> : <Menu/>}</button></div>
     </header>
 
     <main id="top">

@@ -860,6 +860,14 @@ html::-webkit-scrollbar { display:none; width:0; height:0; }
 html,body { background:#f8faf8; }
 body { color:#173d37; }
 .brand-lockup { display:block; width:205px; max-width:100%; height:auto; object-fit:contain; }
+.quote-avatar { width:50px; height:50px; flex:none; overflow:hidden; object-fit:cover; object-position:center 25%; }
+.quote-section .quote-by b { font-size:16px; }
+.quote-section .quote-by small { margin-top:4px; font-size:13px; }
+@media(max-width:760px) {
+  .quote-section .quote-avatar { width:46px; height:46px; }
+  .quote-section .quote-by b { font-size:15px; }
+  .quote-section .quote-by small { font-size:12px; }
+}
 .footer .brand-lockup { width:220px; }
 @media(max-width:760px) {
   .topbar .brand-lockup { width:clamp(116px,38vw,150px); }

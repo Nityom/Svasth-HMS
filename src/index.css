@@ -855,3 +855,8 @@ html::-webkit-scrollbar { display:none; width:0; height:0; }
   .Svaasth-glass-canvas::after,.ripple-fired::after { animation:none; }
   .morph-wordmark,.morph-timeline button { transition:none; }
 }
+
+/* Keep the iOS browser chrome in the same light palette as the page. */
+:root { color-scheme:light; }
+html,body { background:#f8faf8; }
+body { color:#173d37; }

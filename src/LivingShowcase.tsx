@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from 'react';
-import { AnimatePresence, MotionConfig, motion, useMotionValue, useMotionValueEvent, useReducedMotion, useScroll, useSpring, useTransform } from 'framer-motion';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { AnimatePresence, MotionConfig, motion, useMotionValue, useReducedMotion, useSpring, useTransform } from 'framer-motion';
 import { Activity, ArrowDown, ArrowRight, Bed, CalendarDays, Check, ChevronDown, ClipboardPlus, Clock3, FileText, LayoutDashboard, ReceiptText, ShieldCheck, Stethoscope, Users } from 'lucide-react';
 
 const scenes = [
@@ -94,8 +94,33 @@ export default function LivingShowcase({ onBookDemo }: { onBookDemo: () => void 
   const stepRefs = useRef<(HTMLElement | null)[]>([]);
   const [active, setActive] = useState(0);
   const reducedMotion = useReducedMotion();
-  const { scrollYProgress } = useScroll({ target: storyRef, offset: ['start start', 'end end'] });
-  useMotionValueEvent(scrollYProgress, 'change', (progress) => setActive(Math.min(3, Math.floor(Math.min(progress, .9999) * 4))));
+  // Map the story's own full height to 0–1. `end end` shortens that range by
+  // one viewport and makes each scene activate before its matching copy arrives.
+  const updateActiveStep = useCallback(() => {
+    const viewportMarker = window.innerHeight * .76;
+    let closestIndex = 0;
+    let closestDistance = Number.POSITIVE_INFINITY;
+    stepRefs.current.forEach((step, index) => {
+      if (!step) return;
+      const rect = step.getBoundingClientRect();
+      const stepMarker = Math.min(rect.bottom, Math.max(rect.top, viewportMarker));
+      const distance = Math.abs(stepMarker - viewportMarker);
+      if (distance < closestDistance) {
+        closestDistance = distance;
+        closestIndex = index;
+      }
+    });
+    setActive((current) => current === closestIndex ? current : closestIndex);
+  }, []);
+  useEffect(() => {
+    updateActiveStep();
+    window.addEventListener('scroll', updateActiveStep, { passive:true });
+    window.addEventListener('resize', updateActiveStep);
+    return () => {
+      window.removeEventListener('scroll', updateActiveStep);
+      window.removeEventListener('resize', updateActiveStep);
+    };
+  }, [updateActiveStep]);
   const goToStep = (index: number) => stepRefs.current[index]?.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'center' });
   const scene = scenes[active];
   const SceneIcon = scene.icon;

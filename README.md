@@ -1,6 +1,6 @@
-# Svasth-HMS Client-Facing Landing Page
+# Svaasth-HMS Client-Facing Landing Page
 
-A high-converting, modern, dark-mode landing page designed to market and sell **Svasth-HMS White-Label Turnkey Hospital Management System** to doctor clinics, polyclinics, nursing homes, and multi-specialty hospitals.
+A high-converting, modern, dark-mode landing page designed to market and sell **Svaasth-HMS White-Label Turnkey Hospital Management System** to doctor clinics, polyclinics, nursing homes, and multi-specialty hospitals.
 
 ---
 
@@ -30,7 +30,7 @@ A high-converting, modern, dark-mode landing page designed to market and sell **
    - **Full Enterprise Hospital (OPD + IPD)**: ₹75,000 one-time + ₹7,999/mo
 
 7. **Lead Capture & WhatsApp Integration**:
-   - Interactive "Book Live Demo" modal that automatically composes a WhatsApp message to your team (`+91 9373280505`).
+   - Interactive "Book Live Demo" modal that automatically composes a WhatsApp message to your team (`+91 7796308778`).
 
 ---
 
@@ -46,7 +46,7 @@ npm run dev
 npm run build
 ```
 The static production build is output to the `dist/` directory (~230 KB compressed) and can be deployed directly to:
-- Hostinger (e.g. `svasthhms.com` or `get.svasthhms.com`)
+- Hostinger (e.g. `Svaasthhms.com` or `get.Svaasthhms.com`)
 - Vercel (`npx vercel`)
 - Cloudflare Pages / Netlify
 

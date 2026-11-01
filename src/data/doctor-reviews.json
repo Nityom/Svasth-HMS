@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Dr.Anjali Swaroop",
+    "role": "Cosmetic Dental Surgeon",
+    "photo": "/doctors/doctor1.jpg",
+    "review": "I can see the OPD queue and patient details together, so it’s easier to know what needs attention next."
+  },
+  {
+    "name": "Dr.Jyoti Chaurasia",
+    "role": "Oro-Dental Surgeon",
+    "photo": "/doctors/doctor2.png.jpg",
+    "review": "Having a patient’s history in one place makes it much easier for our team to pick up where the last visit left off."
+  },
+  {
+    "name": "Dr.Vipeen Raut",
+    "role": "Orthopaedic Surgeon",
+    "photo": "/doctors/doctor4.jpg",
+    "review": "The prescription templates save us from repeating the same details, and the final copy is clear for patients to follow."
+  },
+  {
+    "name": "Dr.Shilipa Raut",
+    "role": "Gynecologist & Obstetrician",
+    "photo": "/doctors/doctor6.jpg",
+    "review": "It’s much simpler to check medicine stock when the inventory is part of the same system we use every day."
+  },
+  {
+    "name": "Dr.Kautilya Swaroop",
+    "role": "Orthodontics",
+    "photo": "/doctors/doctor7.jpg",
+    "review": "Bills, receipts, and installment payments are easier to follow when they’re all linked to the patient’s record."
+  },
+  {
+    "name": "Dr.Tarun Pandey",
+    "role": "ORTHODONTICS",
+    "photo": "/doctors/doctor8.jpg",
+    "review": "We can shape the workflow around our specialty, instead of asking the team to change the way they work."
+  },
+  {
+    "name": "Dr.Sindhuja Pandey",
+    "role": "ORTHODONTICS",
+    "photo": "/doctors/doctor9.jpg",
+    "review": "Sending consultation details by email or SMS makes it easier for patients to keep the information they need."
+  },
+  {
+    "name": "Dr. Lalit Singh",
+    "role": "Oral Physician & Radiologist",
+    "photo": "/doctors/doctor10.jpg",
+    "review": "It helps to have appointments, notes, and follow-ups connected, rather than scattered across different tools."
+  },
+  {
+    "name": "Dr. B. K. Rai",
+    "role": "Dental Surgeon",
+    "photo": "/doctors/doctor11.jpg",
+    "review": "A shared view of admissions, ward activity, and billing makes it easier for our teams to stay on the same page."
+  }
+]

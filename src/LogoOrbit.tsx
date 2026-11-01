@@ -59,7 +59,7 @@ export default function LogoOrbit() {
       const logoGroup = new THREE.Group();
       sculpture.add(logoGroup);
       const loader = new THREE.TextureLoader();
-      const logoTexture = loader.load('/Svasth_logo.png', (texture) => {
+      const logoTexture = loader.load('/Svaasth_logo.png', (texture) => {
         texture.colorSpace = THREE.SRGBColorSpace;
         texture.anisotropy = renderer.capabilities.getMaxAnisotropy();
       });
@@ -215,8 +215,8 @@ export default function LogoOrbit() {
   }, []);
 
   return (
-    <div className="logo-orbit-scene" ref={rootRef} aria-label="Drag to rotate the interactive Svasth HMS logo and orbital rings">
-      <img className="logo-orbit-fallback" src="/Svasth_logo.png" alt="Svasth HMS" />
+    <div className="logo-orbit-scene" ref={rootRef} aria-label="Drag to rotate the interactive Svaasth HMS logo and orbital rings">
+      <img className="logo-orbit-fallback" src="/Svaasth_logo.png" alt="Svaasth HMS" />
     </div>
   );
 }

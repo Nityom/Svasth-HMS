@@ -1,4 +1,4 @@
-import { ArrowUpRight, Check, Clock3, Mail, ShieldCheck } from 'lucide-react';
+import { Check, Clock3, Mail, ShieldCheck } from 'lucide-react';
 
 function ComingSoon() {
   return (
@@ -36,10 +36,6 @@ function ComingSoon() {
             <span><Check size={14} /> Built for your hospital</span>
             <span><Check size={14} /> Simple for every team</span>
           </div>
-          <a className="coming-soon-button" href="mailto:hello@svaasth.in">
-            Get in touch
-            <ArrowUpRight size={16} />
-          </a>
         </div>
 
         <div className="coming-soon-panel" aria-label="Svaasth is preparing for launch">

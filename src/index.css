@@ -875,7 +875,8 @@ body { color:#173d37; }
 }
 
 .coming-soon {
-  min-height:100vh;
+  height:100vh;
+  min-height:100svh;
   position:relative;
   isolation:isolate;
   overflow:hidden;
@@ -898,7 +899,7 @@ body { color:#173d37; }
 .coming-soon-orb-one { width:540px; height:380px; right:3%; top:26%; transform:rotateX(63deg) rotateZ(-24deg); }
 .coming-soon-orb-two { width:650px; height:480px; right:-3%; top:19%; border-color:#e4efe8; transform:rotateX(63deg) rotateZ(-24deg); }
 .coming-soon-header { height:106px; display:flex; align-items:center; justify-content:space-between; }
-.coming-soon-brand { display:block; width:clamp(245px,31vw,365px); }
+.coming-soon-brand { display:block; width:clamp(210px,25vw,300px); }
 .coming-soon-brand img { display:block; width:100%; height:auto; }
 .coming-soon-status,.coming-soon-live { display:flex; align-items:center; gap:8px; color:#4d7868; font-size:10px; font-weight:700; }
 .coming-soon-status i,.coming-soon-live i { width:7px; height:7px; border-radius:50%; background:#53b990; box-shadow:0 0 0 3px #53b99022; }
@@ -951,7 +952,7 @@ body { color:#173d37; }
   .coming-soon-orb-two { right:-48%; top:32%; }
 }
 @media(max-width:390px) {
-  .coming-soon-brand { width:min(73vw,330px); }
+  .coming-soon-brand { width:min(62vw,270px); }
   .coming-soon-status { font-size:0; }
   .coming-soon h1 { font-size:44px; }
   .coming-soon-points { gap:10px; }

@@ -9,13 +9,7 @@ function ComingSoon() {
 
       <header className="coming-soon-header">
         <a className="coming-soon-brand" href="/" aria-label="Svaasth home">
-          <span className="coming-soon-mark">
-            <img src="/Svaasth_logo.png" alt="" />
-          </span>
-          <span>
-            <strong>Svaasth</strong>
-            <small>HOSPITAL MANAGEMENT SYSTEM</small>
-          </span>
+          <img src="/svaasth-wordmark.png" alt="Svaasth HMS" />
         </a>
         <span className="coming-soon-status">
           <i aria-hidden="true" />

@@ -19,7 +19,7 @@ A high-converting, modern, dark-mode landing page designed to market and sell **
    - Orthopaedics & Joint Replacement, Obstetrics & Gynaecology, Dental Clinics, Multi-Specialty, and Daycare Surgery.
 
 4. **Doctor & Hospital Case Studies**:
-   - Verified feedback from Cortex Hospital & Research Centre and senior specialists.
+   - Verified feedback from Cortex Hospital and senior specialists.
 
 5. **Interactive Time & ROI Calculator**:
    - Sliders for Daily OPD Patients and Monthly IPD Admissions displaying live monthly hours and rupee savings.

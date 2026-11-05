@@ -13,7 +13,7 @@ function ComingSoon() {
             <img src="/Svaasth_logo.png" alt="" />
           </span>
           <span>
-            <strong>Svaasth<span>—</span></strong>
+            <strong>Svaasth</strong>
             <small>HOSPITAL MANAGEMENT SYSTEM</small>
           </span>
         </a>

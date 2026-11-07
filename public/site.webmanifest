@@ -1,0 +1,19 @@
+{
+  "name": "Svaasth HMS",
+  "short_name": "Svaasth",
+  "description": "Hospital and clinic management software for healthcare teams across India.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f8faf8",
+  "theme_color": "#f8faf8",
+  "lang": "en-IN",
+  "icons": [
+    {
+      "src": "/Svaasth_logo.png",
+      "sizes": "413x530",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

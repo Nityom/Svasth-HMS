@@ -1,9 +1,10 @@
-import { useEffect, useRef, useState } from 'react';
+import { lazy, Suspense, useEffect, useRef, useState } from 'react';
 import { AnimatePresence, animate, motion } from 'framer-motion';
 import { Activity, ArrowRight, ArrowUp, ArrowUpRight, Bed, Boxes, CalendarDays, Check, ChevronDown, ClipboardPlus, Clock3, CreditCard, Database, FileText, LockKeyhole, Mail, Menu, MessageCircle, Pill, Plus, ReceiptText, Save, Settings2, ShieldCheck, Sparkles, Stethoscope, Users, X, Zap } from 'lucide-react';
 import LogoOrbit from './LogoOrbit';
-import LivingShowcase from './LivingShowcase';
 import doctorReviews from './data/doctor-reviews.json';
+
+const LivingShowcase = lazy(() => import('./LivingShowcase'));
 
 const features = [
   { icon: CalendarDays, title: 'A calmer OPD', copy: 'Run token queues, register patients quickly and capture vitals before each consultation.', tint: 'mint' },
@@ -186,7 +187,9 @@ function App() {
 
       <section className="trust-strip"><div><span>ONE CONNECTED WORKFLOW</span><b>From first hello to follow-up.</b></div><div className="trust-items"><span><Check/> OPD &amp; reception</span><span><Check/> Clinical records</span><span><Check/> IPD &amp; billing</span><span><Check/> Patient communication</span></div></section>
 
-      <LivingShowcase onBookDemo={openDemo}/>
+      <Suspense fallback={<section className="living-section" aria-label="Product tour" />}>
+        <LivingShowcase onBookDemo={openDemo}/>
+      </Suspense>
 
       <section id="features" className="section features-section"><div className="section-heading centered"><span className="eyebrow">THE Svaasth DIFFERENCE</span><h2>Everyday care, <span>all connected.</span></h2><p>From the first patient entry to stock, payments and follow-up, configure Svaasth around the way your hospital works.</p></div><div className="feature-grid">{features.map((feature, i) => <motion.article className="feature-card" key={feature.title} variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: .2 }} whileHover={{ y: -5 }} transition={{ duration: .2 }}><div className={`feature-icon ${feature.tint}`}><feature.icon size={19}/></div><span className="feature-index">{String(i + 1).padStart(2,'0')}</span><h3>{feature.title}</h3><p>{feature.copy}</p><a href="#preview">Explore workflow <ArrowRight size={13}/></a></motion.article>)}</div><p className="feature-setup-note">Modules, templates and workflows can be configured to your hospital’s requirements. Email and SMS availability depends on your setup.</p></section>
 

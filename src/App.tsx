@@ -168,18 +168,38 @@ function App() {
             { name: 'Dr. Vipeen Raut', photo: '/doctors/doctor4.jpg' },
           ].map((doctor, index) => <motion.span key={doctor.name} title={doctor.name} whileHover={{ y: -2, scale: 1.06, zIndex: 4 }} transition={{ type: 'spring', stiffness: 280, damping: 24 }}><img src={doctor.photo} alt={doctor.name} loading="lazy" style={{ objectPosition: index === 3 ? '32% center' : 'center 30%', ...(index === 0 ? { transform: 'scale(1.14)', transformOrigin: 'center 24%' } : {}) }}/></motion.span>)}</div><div className="hero-proof-copy"><b>Thoughtfully built with clinicians</b><small>For independent practices and growing hospitals</small><strong className="clinic-proof">15+ clinics already using us</strong></div></motion.div>
     </div>
-        <motion.div className="hero-art hero-video-art" initial={{opacity:0,scale:.93,rotate:2}} animate={{opacity:1,scale:1,rotate:0}} transition={{duration:.8,delay:.15,ease:'easeOut'}}>
+        <motion.div className="hero-art" initial={{opacity:0,scale:.93,rotate:2}} animate={{opacity:1,scale:1,rotate:0}} transition={{duration:.8,delay:.15,ease:'easeOut'}}>
           <div className="studio-glow"/><div className="studio-orbit studio-orbit-a"/><div className="studio-orbit studio-orbit-b"/><div className="studio-orbit studio-orbit-c"/>
-          <div className="hero-video-frame">
-            <video className="hero-video" autoPlay muted loop playsInline preload="metadata" aria-label="Svaasth hospital management software demo">
-              <source src="/demo-video.mov" type="video/quicktime" />
-            </video>
-            <span className="hero-video-label"><i/> Product walkthrough</span>
-          </div>
+          <motion.div className="studio-particle particle-one" animate={{y:[0,-12,0],x:[0,5,0]}} transition={{duration:4.5,repeat:Infinity,ease:'easeInOut'}}/><motion.div className="studio-particle particle-two" animate={{y:[0,10,0],x:[0,-6,0]}} transition={{duration:5.5,repeat:Infinity,ease:'easeInOut'}}/>
+          <div className="studio-heading"><span className="studio-heading-mark"><Sparkles size={13}/></span><span><b>Explore the workspace</b><small>Choose a workflow to preview</small></span><span className="studio-step">0{demos.findIndex(item=>item.id===demo)+1} <i>/ 04</i></span></div>
+          <div className="studio-module-picker" aria-label="Choose a workflow">{demos.map(item=><motion.button type="button" key={item.id} aria-pressed={demo===item.id} className={demo===item.id?'active':''} onClick={()=>setDemo(item.id)} whileHover={{y:-3,scale:1.035}} whileTap={{scale:.97}}><span className="studio-module-icon"><item.icon size={16}/></span><span>{item.id==='billing'?'Billing':item.id==='ipd'?'Beds':item.id==='rx'?'Digital Rx':'OPD queue'}</span><ArrowUpRight size={12} className="studio-module-arrow"/></motion.button>)}</div>
+          <AnimatePresence mode="wait"><motion.div className="studio-dashboard" key={demo} initial={{opacity:0,y:18,rotateX:5}} animate={{opacity:1,y:0,rotateX:0}} exit={{opacity:0,y:-10}} transition={{duration:.32,ease:'easeOut'}}>
+            <div className="studio-dash-top"><div className="studio-brand"><img src="/Svaasth_logo.png" alt=""/><span><b>Svaasth HMS</b><small>HOSPITAL WORKSPACE</small></span></div><span className="studio-date">{new Date().toLocaleDateString('en-IN',{day:'2-digit',month:'short'})}</span></div>
+            <div className="studio-dash-title"><div><small>{activeDemo.unit}</small><h3>{activeDemo.title}</h3></div><span className="studio-avatar">DR</span></div>
+            <div className="studio-summary">{activeDemo.summary.map((stat,i)=><div className="studio-summary-card" key={stat[0]}><span className={i?'summary-icon summary-icon-peach':'summary-icon'}>{i?<ClipboardPlus size={15}/>:<HeroDemoIcon size={15}/>}</span><small>{stat[0]}</small><b>{stat[1]}</b><em>{stat[2]}</em></div>)}</div>
+            <div className="studio-list-heading"><b>{activeDemo.name}</b><a href="#preview">View workflow <ArrowRight size={12}/></a></div>
+            <div className="studio-rows">{activeDemo.rows.slice(0,2).map((row,i)=><div className="studio-row" key={row[0]}><span className={`studio-row-icon row-icon-${i}`}>{demo==='opd'?`0${i+1}`:<HeroDemoIcon size={13}/>}</span><span><b>{row[1]}</b><small>{row[2]}</small></span><em className={row[3]==='Waiting'||row[3]==='Available'?'row-warning':''}><i/>{row[3]}</em></div>)}</div>
+            <button type="button" className="studio-tour-link" onClick={()=>document.getElementById('preview')?.scrollIntoView({behavior:'smooth'})}>Explore this workflow in the product tour <ArrowRight size={14}/></button>
+          </motion.div></AnimatePresence>
+          <div className="studio-footnote"><span><i/> Interactive product preview</span><span>Patient details anonymized</span></div>
         </motion.div>
       </section>
 
       <section className="trust-strip"><div><span>ONE CONNECTED WORKFLOW</span><b>From first hello to follow-up.</b></div><div className="trust-items"><span><Check/> OPD &amp; reception</span><span><Check/> Clinical records</span><span><Check/> IPD &amp; billing</span><span><Check/> Patient communication</span></div></section>
+
+      <section className="product-video-section" aria-labelledby="product-video-heading">
+        <div className="product-video-copy">
+          <span className="eyebrow">SEE SVAasth IN MOTION</span>
+          <h2 id="product-video-heading">One calm workflow for <span>every busy day.</span></h2>
+          <p>See how Svaasth brings appointments, prescriptions, patient history and billing together in one connected workspace.</p>
+          <button className="button" onClick={openDemo}>Book a walkthrough <ArrowRight size={15}/></button>
+        </div>
+        <div className="product-video-frame">
+          <video className="product-video" autoPlay muted loop playsInline preload="metadata" aria-label="Svaasth hospital management software product demo">
+            <source src="/demo-video.mov" type="video/quicktime" />
+          </video>
+        </div>
+      </section>
 
       <Suspense fallback={<section className="living-section" aria-label="Product tour" />}>
         <LivingShowcase onBookDemo={openDemo}/>

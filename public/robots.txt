@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://svaasth.in/sitemap.xml
+Sitemap: https://svaasth.in/sitemap_index_1.xml

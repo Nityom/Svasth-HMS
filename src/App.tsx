@@ -72,30 +72,8 @@ function App() {
     setMenu(false);
     const target = document.getElementById(id);
     if (!target) return;
-    const top = target.getBoundingClientRect().top + window.scrollY - 92;
     cancelNavScroll.current();
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { window.scrollTo(0, top); return; }
-    let frame = 0;
-    const start = window.scrollY;
-    const distance = top - start;
-    const duration = Math.min(1500, Math.max(850, Math.abs(distance) * .62));
-    const startedAt = performance.now();
-    const stop = () => {
-      window.cancelAnimationFrame(frame);
-      window.removeEventListener('wheel', stop);
-      window.removeEventListener('touchstart', stop);
-    };
-    cancelNavScroll.current = stop;
-    const tick = (now: number) => {
-      const progress = Math.min(1, (now - startedAt) / duration);
-      const eased = progress < .5 ? 4 * progress * progress * progress : 1 - Math.pow(-2 * progress + 2, 3) / 2;
-      window.scrollTo(0, start + distance * eased);
-      if (progress < 1) frame = window.requestAnimationFrame(tick);
-      else stop();
-    };
-    window.addEventListener('wheel', stop, { passive:true, once:true });
-    window.addEventListener('touchstart', stop, { passive:true, once:true });
-    frame = window.requestAnimationFrame(tick);
+    target.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
   };
   const scrollToTop = (event?: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => {
     event?.preventDefault();
@@ -196,6 +174,7 @@ function App() {
         </div>
         <div className="product-video-frame">
           <video className="product-video" autoPlay muted loop playsInline preload="metadata" aria-label="Svaasth hospital management software product demo">
+            <source src="/demo-video.mp4" type="video/mp4" />
             <source src="/demo-video.mov" type="video/quicktime" />
           </video>
         </div>

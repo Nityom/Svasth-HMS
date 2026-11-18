@@ -3,11 +3,21 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import LegalPages, { isCompanyPage } from './LegalPages';
 import SeoLandingPage, { getSeoPage } from './SeoLandingPage';
+import SvaasthConnect from './SvaasthConnect';
 import './index.css';
 
 const path = window.location.pathname.replace(/\/+$/, '') || '/';
 const seoPage = getSeoPage(path);
+const isConnectPage = path === '/svaasth-connect' || path === '/connect';
 const routeMeta: Record<string, { title: string; description: string }> = {
+  '/svaasth-connect': {
+    title: 'Svaasth Connect for WhatsApp | Healthcare WhatsApp Automation',
+    description: 'Transform patient engagement with Svaasth Connect. Automated WhatsApp appointments, live OPD queue tokens, digital prescriptions, lab test reports and follow-up reminders. Setup: ₹15,000, Annual: ₹10,000.',
+  },
+  '/connect': {
+    title: 'Svaasth Connect for WhatsApp | Healthcare WhatsApp Automation',
+    description: 'Transform patient engagement with Svaasth Connect. Automated WhatsApp appointments, live OPD queue tokens, digital prescriptions, lab test reports and follow-up reminders. Setup: ₹15,000, Annual: ₹10,000.',
+  },
   '/hospital-management-software': {
     title: 'Hospital Management Software in India | Svaasth HMS',
     description: 'Manage OPD, IPD, patient records, prescriptions, billing and inventory with configurable hospital management software from Svaasth HMS.',
@@ -63,6 +73,14 @@ if (metadata) {
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    {seoPage ? <SeoLandingPage page={seoPage} /> : isCompanyPage(path) ? <LegalPages path={path} /> : <App />}
+    {isConnectPage ? (
+      <SvaasthConnect />
+    ) : seoPage ? (
+      <SeoLandingPage page={seoPage} />
+    ) : isCompanyPage(path) ? (
+      <LegalPages path={path} />
+    ) : (
+      <App />
+    )}
   </React.StrictMode>,
 );

@@ -81,7 +81,7 @@ const workflowSteps: WorkflowStep[] = [
     tag: 'QUEUE UPDATES',
     title: 'Real-Time OPD Queue Alerts (Reduce Waiting Room Crowds)',
     description:
-      'Keep patients informed about clinic delays or live queue progress. Svaasth Connect sends proactive alerts: "Dr. Raut is on Token #02. 2 patients ahead of you. Please reach Room 02 by 10:25 AM."',
+      'Keep patients informed about clinic delays or live queue progress. Svaasth Connect sends proactive alerts: "Dr. Sharma is on Token #02. 2 patients ahead of you. Please reach Room 02 by 10:25 AM."',
     highlights: [
       'Cuts waiting room crowding and patient frustration',
       'Patients can wait safely in their vehicle or nearby café',
@@ -220,42 +220,42 @@ export default function SvaasthConnect() {
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-7 text-[13px] font-semibold text-[#5a6e64]">
-          <a href="/" className="hover:text-[#187556] transition-colors">
-            Overview
+        <nav className="hidden md:flex items-center gap-6 text-[12.5px] font-semibold text-[#5a6e64]">
+          <a href="/" className="hover:text-[#187556] transition-colors whitespace-nowrap">
+            ← Full Platform
           </a>
-          <a href="#workflow" className="hover:text-[#187556] transition-colors">
+          <a href="#workflow" className="hover:text-[#187556] transition-colors whitespace-nowrap">
             Workflow
           </a>
-          <a href="#demo" className="hover:text-[#187556] transition-colors">
-            Live Demo
+          <a href="#demo" className="hover:text-[#187556] transition-colors whitespace-nowrap">
+            Demo
           </a>
-          <a href="#pricing" className="hover:text-[#187556] transition-colors">
+          <a href="#pricing" className="hover:text-[#187556] transition-colors whitespace-nowrap">
             Pricing
           </a>
-          <a href="#faq" className="hover:text-[#187556] transition-colors">
+          <a href="#faq" className="hover:text-[#187556] transition-colors whitespace-nowrap">
             FAQ
           </a>
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#e7f7ed] border border-[#c4ebd1] text-[#1e7a57] rounded-full text-xs font-bold shadow-xs">
-            <span className="w-2 h-2 rounded-full bg-[#25d366] animate-pulse"></span>
-            WhatsApp API
+          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-[#176e560d] border border-[#176e5622] text-[#176e56] rounded-full text-[11px] font-semibold whitespace-nowrap">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#25d366]" />
+            Official WhatsApp API
           </span>
         </nav>
 
         {/* Header Actions */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3.5 flex-shrink-0 whitespace-nowrap">
           <a
             href="tel:+917796308778"
-            className="hidden lg:inline-flex items-center gap-1.5 text-xs font-bold text-[#446255] hover:text-[#176e56]"
+            className="hidden lg:inline-flex items-center gap-1.5 text-xs font-bold text-[#3b5c50] hover:text-[#176e56] whitespace-nowrap flex-shrink-0"
           >
             <Phone size={13} />
             +91 77963 08778
           </a>
           <button
             onClick={openDemo}
-            className="button button-small inline-flex items-center gap-1.5 bg-[#176e56] hover:bg-[#115643] text-white px-4 py-2 rounded-xl text-xs font-bold shadow-sm transition-all"
+            className="button button-small inline-flex items-center gap-1.5 bg-[#176e56] hover:bg-[#115643] text-white px-3.5 py-2 rounded-xl text-xs font-bold shadow-sm transition-all whitespace-nowrap flex-shrink-0"
           >
-            <span>Get Svaasth Connect</span>
+            <span>Get WhatsApp Setup</span>
             <ArrowRight size={14} />
           </button>
           <button
@@ -352,36 +352,25 @@ export default function SvaasthConnect() {
               </a>
             </motion.div>
 
-            {/* Quick Pricing Badge in Hero */}
+            {/* Trust and Key Capability Highlights */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.32 }}
-              className="p-4 bg-white/90 border border-[#e1ece4] rounded-2xl shadow-sm flex flex-wrap items-center gap-6 w-full max-w-xl"
+              className="flex flex-wrap items-center gap-y-2 gap-x-6 pt-4 border-t border-[#e2ece5] text-xs font-semibold text-[#486b5c]"
             >
-              <div>
-                <span className="block text-[11px] font-bold text-[#81968b] tracking-wider uppercase">Setup Fee</span>
-                <div className="flex items-baseline gap-1 mt-0.5">
-                  <strong className="text-2xl font-black text-[#1b4e3f] font-['Manrope']">₹15,000</strong>
-                  <span className="text-xs text-[#70877c]">one-time setup</span>
-                </div>
-              </div>
-              <div className="h-8 w-px bg-[#e1ece4]" />
-              <div>
-                <span className="block text-[11px] font-bold text-[#81968b] tracking-wider uppercase">Annual Charge</span>
-                <div className="flex items-baseline gap-1 mt-0.5">
-                  <strong className="text-2xl font-black text-[#1b4e3f] font-['Manrope']">₹10,000</strong>
-                  <span className="text-xs text-[#70877c]">/year hosting &amp; updates</span>
-                </div>
-              </div>
-              <div className="ml-auto">
-                <a
-                  href="#pricing"
-                  className="text-xs font-bold text-[#1a7756] hover:underline inline-flex items-center gap-1"
-                >
-                  View Details <ChevronDown size={14} />
-                </a>
-              </div>
+              <span className="inline-flex items-center gap-1.5">
+                <Check className="text-[#176e56]" size={14} />
+                Official Meta Cloud WhatsApp API
+              </span>
+              <span className="inline-flex items-center gap-1.5">
+                <Check className="text-[#176e56]" size={14} />
+                24/7 Automated OPD Receptionist
+              </span>
+              <span className="inline-flex items-center gap-1.5">
+                <Check className="text-[#176e56]" size={14} />
+                Zero Patient App Downloads
+              </span>
             </motion.div>
           </div>
 
@@ -417,7 +406,7 @@ export default function SvaasthConnect() {
                 {/* Incoming User Message */}
                 <div className="flex justify-end">
                   <div className="bg-[#e7f8ec] text-[#1c483a] p-3 rounded-2xl rounded-tr-xs max-w-[85%] border border-[#cdecd6] shadow-xs">
-                    <p className="font-medium">Book consultation with Dr. Raut for joint pain please</p>
+                    <p className="font-medium">Book consultation with Dr. Sharma for joint pain please</p>
                     <span className="block text-[9px] text-[#719684] text-right mt-1">10:14 AM</span>
                   </div>
                 </div>
@@ -426,7 +415,7 @@ export default function SvaasthConnect() {
                 <div className="flex justify-start">
                   <div className="bg-[#f7faf8] text-[#24463a] p-3.5 rounded-2xl rounded-tl-xs max-w-[92%] border border-[#e2ece5] shadow-xs space-y-2">
                     <p className="font-semibold text-[#186047]">
-                      Namaste! Dr. Vipeen Raut (Orthopaedics) has slots today:
+                      Namaste! Dr. Rajesh Sharma (Orthopaedics) has slots today:
                     </p>
                     <div className="grid grid-cols-2 gap-1.5 pt-1">
                       <button className="bg-white border border-[#cbe4d4] hover:bg-[#ebf8f0] text-[#1e6f50] py-1.5 px-2 rounded-lg font-bold text-[11px] text-center transition-colors">
@@ -669,7 +658,7 @@ export default function SvaasthConnect() {
                 <>
                   <div className="flex justify-end">
                     <div className="bg-[#d9fdd3] text-[#111] p-2.5 rounded-lg rounded-tr-none max-w-[80%] shadow-2xs">
-                      <p>Hi, I want to book an appointment with Dr. Raut for joint pain</p>
+                      <p>Hi, I want to book an appointment with Dr. Sharma for joint pain</p>
                       <span className="block text-[9px] text-[#667781] text-right mt-1">10:02 AM ✓✓</span>
                     </div>
                   </div>
@@ -677,7 +666,7 @@ export default function SvaasthConnect() {
                   <div className="flex justify-start">
                     <div className="bg-white text-[#111] p-3 rounded-lg rounded-tl-none max-w-[85%] shadow-2xs space-y-2">
                       <p>
-                        Hello! Welcome to Apex Multispeciality Hospital. We found <b>Dr. Vipeen Raut</b> (Orthopaedics).
+                        Hello! Welcome to Apex Multispeciality Hospital. We found <b>Dr. Rajesh Sharma</b> (Orthopaedics).
                         Please choose your preferred consultation slot:
                       </p>
                       <div className="space-y-1 pt-1">
@@ -730,7 +719,7 @@ export default function SvaasthConnect() {
                         <span>🔔</span> LIVE OPD QUEUE NOTIFICATION
                       </div>
                       <p className="leading-relaxed">
-                        Dr. Raut is currently examining <b>Token #02</b>.
+                        Dr. Sharma is currently examining <b>Token #02</b>.
                         <br />
                         There is <b>1 patient</b> ahead of you.
                       </p>
@@ -755,7 +744,7 @@ export default function SvaasthConnect() {
                   <div className="flex justify-start">
                     <div className="bg-white text-[#111] p-3 rounded-lg rounded-tl-none max-w-[88%] shadow-2xs space-y-2.5">
                       <p>
-                        Thank you for visiting Apex Multispeciality Hospital today. Dr. Vipeen Raut has issued your
+                        Thank you for visiting Apex Multispeciality Hospital today. Dr. Rajesh Sharma has issued your
                         digital prescription:
                       </p>
 
@@ -797,8 +786,8 @@ export default function SvaasthConnect() {
                         Namaste Anaya ji! Hope you are recovering well from your knee treatment.
                       </p>
                       <p>
-                        This is a gentle reminder for your scheduled <b>7-day follow-up consultation</b> with Dr. Vipeen
-                        Raut on <b>Wednesday, 4 Nov at 11:00 AM</b>.
+                        This is a gentle reminder for your scheduled <b>7-day follow-up consultation</b> with Dr. Rajesh
+                        Sharma on <b>Wednesday, 4 Nov at 11:00 AM</b>.
                       </p>
                       <div className="space-y-1.5 pt-1">
                         <button className="w-full py-1.5 px-3 bg-[#e8f7ee] border border-[#c4e9d2] text-[#187556] rounded-lg font-bold text-center">

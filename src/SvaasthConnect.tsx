@@ -201,9 +201,7 @@ export default function SvaasthConnect() {
           <a href="#demo" className="hover:text-[#187556] transition-colors">Demo</a>
           <a href="#pricing" className="hover:text-[#187556] transition-colors">Pricing</a>
           <a href="#faq" className="hover:text-[#187556] transition-colors">FAQ</a>
-          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-[#176e560d] border border-[#176e5622] text-[#176e56] rounded-full text-[11px] font-semibold">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#25d366]" />Official WhatsApp API
-          </span>
+         
         </nav>
         <div className="flex items-center gap-3 flex-shrink-0">
           <a href="tel:+917796308778" className="hidden lg:inline-flex items-center gap-1.5 text-xs font-bold text-[#3b5c50] hover:text-[#176e56]">
